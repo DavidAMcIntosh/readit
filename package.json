@@ -1,14 +1,17 @@
 {
   "name": "master-electron",
   "version": "1.0.0",
-  "description": "Master Electron Course Code",
+  "description": "Master Electron Project",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "watch": "nodemon --exec electron .",
-    "reset": "git reset --hard"
+    "reset": "git reset --hard",
+    "build": "electron-builder -w",
+    "win-cert": "electron-builder create-self-signed-cert -p davidamcintosh"
   },
   "repository": "https://github.com/stackacademytv/master-electron",
+  "homepage": "https://github.com/stackacademytv/master-electron",
   "keywords": [
     "Electron",
     "Master Electron",
@@ -18,7 +21,19 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^9.0.0",
+    "electron-builder": "^22.10.5",
     "nodemon": "^2.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "electron-window-state": "^5.0.3"
+  },
+  "build": {
+    "appId": "com.davidamcintosh.readit",
+    "copyright": "Copyright DavidAMcIntosh",
+    "win": {
+      "publisherName": "davidamcintosh",
+      "certificateFile": "private/davidamcintosh.pfx",
+      "certificatePassword": ""
+    }
+  }
 }
