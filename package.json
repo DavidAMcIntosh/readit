@@ -8,10 +8,11 @@
     "watch": "nodemon --exec electron .",
     "reset": "git reset --hard",
     "build": "electron-builder -w",
+    "release": "electron-builder -w -p 'onTagOrDraft'",
     "win-cert": "electron-builder create-self-signed-cert -p davidamcintosh"
   },
-  "repository": "https://github.com/stackacademytv/master-electron",
-  "homepage": "https://github.com/stackacademytv/master-electron",
+  "repository": "https://github.com/DavidAMcIntosh/readit.git",
+  "homepage": "https://github.com/DavidAMcIntosh/readit.git",
   "keywords": [
     "Electron",
     "Master Electron",
@@ -25,11 +26,14 @@
     "nodemon": "^2.0.0"
   },
   "dependencies": {
+    "electron-log": "^4.4.1",
+    "electron-updater": "^4.3.9",
     "electron-window-state": "^5.0.3"
   },
   "build": {
     "appId": "com.davidamcintosh.readit",
     "copyright": "Copyright DavidAMcIntosh",
+    "publish": "github",
     "win": {
       "publisherName": "davidamcintosh",
       "certificateFile": "private/davidamcintosh.pfx",
